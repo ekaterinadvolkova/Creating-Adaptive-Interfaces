@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_5" orientation="landscape" appearance="light"/>
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -13,11 +13,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter passcode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Gu-wJ-WXE">
-                                <rect key="frame" x="308" y="74" width="120" height="20"/>
+                                <rect key="frame" x="147" y="74" width="120" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="JHV-Yq-Y0c"/>
                                     <constraint firstAttribute="width" constant="120" id="UEf-xs-JUH"/>
@@ -26,12 +26,65 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="KDd-tK-W09">
+                                <rect key="frame" x="109.66666666666669" y="106" width="195" height="20"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L03-va-dj8">
+                                        <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="Q0J-ln-ih8"/>
+                                            <constraint firstAttribute="height" constant="20" id="fpr-4X-2AS"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p9B-Xh-dGB">
+                                        <rect key="frame" x="34.999999999999986" y="0.0" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="tOA-du-ydw"/>
+                                            <constraint firstAttribute="height" constant="20" id="urD-VW-mrC"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7CD-a3-KOc">
+                                        <rect key="frame" x="69.999999999999986" y="0.0" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="KJs-tA-isK"/>
+                                            <constraint firstAttribute="height" constant="20" id="qPe-vH-IRP"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TZU-mq-S2m">
+                                        <rect key="frame" x="104.99999999999999" y="0.0" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="Ky5-Zk-mFi"/>
+                                            <constraint firstAttribute="width" constant="20" id="Uzz-7H-kyJ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hsm-QZ-GoD">
+                                        <rect key="frame" x="140" y="0.0" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="YU6-TK-7Nm"/>
+                                            <constraint firstAttribute="width" constant="20" id="crr-ub-OOb"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aHV-jM-Xug">
+                                        <rect key="frame" x="175" y="0.0" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="TCW-KZ-LnQ"/>
+                                            <constraint firstAttribute="height" constant="20" id="csp-8c-vDp"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="195" id="CFd-wM-tdf"/>
+                                    <constraint firstAttribute="height" constant="20" id="xoL-66-iDH"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="8Gu-wJ-WXE" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="2vh-pn-ga0"/>
                             <constraint firstItem="8Gu-wJ-WXE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="74" id="Bkh-8v-mCL"/>
+                            <constraint firstItem="KDd-tK-W09" firstAttribute="top" secondItem="8Gu-wJ-WXE" secondAttribute="bottom" constant="12" id="BzK-VK-yol"/>
+                            <constraint firstItem="KDd-tK-W09" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ydF-b3-Sg1"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -44,7 +97,7 @@
             <objects>
                 <viewController id="MEM-1x-wgO" customClass="RadioViewController" customModule="Course2Week4Task1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="55D-DC-3d5">
-                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="j4y-HS-arr"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
