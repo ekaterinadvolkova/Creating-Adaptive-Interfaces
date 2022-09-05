@@ -22,3 +22,5 @@
 * All other parameters (colors, fonts, etc.) are default.
 
 ### Screens
+
+<img src="https://media.github.bus.zalan.do/user/10996/files/dc344844-4146-4729-9709-50e06b1c9a41" height = 400, width = 230> <img src="https://media.github.bus.zalan.do/user/10996/files/fbf24567-219e-4f06-8062-d2bc0facae6a" height = 230, width = 400>
