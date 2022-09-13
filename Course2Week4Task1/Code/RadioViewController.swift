@@ -52,20 +52,35 @@ class RadioViewController: UIViewController {
     private lazy var verticalStackView: UIStackView! = {
         let verticalStackView = UIStackView()
         verticalStackView.axis = .vertical
-        verticalStackView.addArrangedSubview(progressView)
-        verticalStackView.addArrangedSubview(label)
-        verticalStackView.addArrangedSubview(volume)
         verticalStackView.translatesAutoresizingMaskIntoConstraints = false
+        verticalStackView.backgroundColor = .red
         return verticalStackView
     }()
+    
+    private lazy var horizontalStackView: UIStackView! = {
+        let horizontalStackView = UIStackView()
+        horizontalStackView.axis = .horizontal
+        horizontalStackView.spacing = 16
+        horizontalStackView.translatesAutoresizingMaskIntoConstraints = false
+        horizontalStackView.addSubview(imageView)
+        horizontalStackView.addSubview(label)
+        return horizontalStackView
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         
         //check orientation
-        UIDevice.current.orientation.isLandscape ? addLandscapeSubviews() : addPortraitSubviews()
-       
+        if UIDevice.current.orientation.isLandscape {
+            print("landscape")
+            addLandscapeSubviews()
+        } else {
+            print("portrait")
+            addPortraitSubviews()
+        }
+        
     }
     
     func addPortraitSubviews(){
@@ -79,30 +94,41 @@ class RadioViewController: UIViewController {
         configureLandscapeConstraints()
     }
     
-    var imageViewLeadingAnchor: NSLayoutConstraint?
-    var imageViewTrailingAnchor: NSLayoutConstraint?
-    var imageViewTopAnchor: NSLayoutConstraint?
-    
     var verticalStackViewTopAnchor: NSLayoutConstraint?
     var verticalStackViewLeadingAnchor: NSLayoutConstraint?
     var verticalStackViewTrailingAnchor: NSLayoutConstraint?
     var verticalStackViewBottomAnchor: NSLayoutConstraint?
+    var imageViewLeadingAnchor: NSLayoutConstraint?
+    var imageViewTrailingAnchor: NSLayoutConstraint?
+    var imageViewTopAnchor: NSLayoutConstraint?
     
     func configurePortrainConstraints(){
+        imageViewLeadingAnchor?.isActive = false
+        imageViewTrailingAnchor?.isActive = false
+        imageViewTopAnchor?.isActive = false
+        verticalStackViewTopAnchor?.isActive = false
+        verticalStackViewLeadingAnchor?.isActive = false
+        verticalStackViewTrailingAnchor?.isActive = false
+        verticalStackViewBottomAnchor?.isActive = false
         
         imageView.removeFromSuperview()
         view.addSubview(imageView)
+        
         imageViewLeadingAnchor = imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16)
         imageViewTrailingAnchor = imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
-        imageViewTopAnchor = imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8)
+        imageViewTopAnchor =  imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8)
+        
         
         verticalStackViewTopAnchor = verticalStackView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 30)
-        verticalStackViewTopAnchor?.priority = .defaultHigh
-        
         verticalStackViewLeadingAnchor = verticalStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16)
         verticalStackViewTrailingAnchor = verticalStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
         verticalStackViewBottomAnchor = verticalStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -24)
         verticalStackView.spacing = 0
+        verticalStackViewTopAnchor?.priority = .defaultHigh
+        
+        verticalStackView.addArrangedSubview(progressView)
+        verticalStackView.addArrangedSubview(label)
+        verticalStackView.addArrangedSubview(volume)
         
         imageViewLeadingAnchor?.isActive = true
         imageViewTrailingAnchor?.isActive = true
@@ -111,9 +137,21 @@ class RadioViewController: UIViewController {
         verticalStackViewLeadingAnchor?.isActive = true
         verticalStackViewTrailingAnchor?.isActive = true
         verticalStackViewBottomAnchor?.isActive = true
+        
     }
     
     func configureLandscapeConstraints(){
         
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        if UIDevice.current.orientation.isLandscape {
+            print("Landscape")
+            configureLandscapeConstraints()
+        } else {
+            print("Portrait")
+            configurePortrainConstraints()
+        }
     }
 }
