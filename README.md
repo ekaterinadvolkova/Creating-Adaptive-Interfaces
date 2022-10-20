@@ -1,4 +1,7 @@
 # Creating Adaptive Interfcae in the Interface Builder
+
+[__Walkthrough on YouTube__](https://www.youtube.com/watch?v=6A5tpWbPJfU)
+
 ### Task 1
 * Create authorization screen
 * The source project has a ```Do not change folder```, the files  need no change. 
