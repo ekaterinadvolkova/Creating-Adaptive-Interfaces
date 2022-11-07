@@ -1,8 +1,9 @@
 # Creating Adaptive Interfcae in the Interface Builder
 
+### Task 1
+
 [__Walkthrough on YouTube__](https://www.youtube.com/watch?v=6A5tpWbPJfU)
 
-### Task 1
 * Create authorization screen
 * The source project has a ```Do not change folder```, the files  need no change. 
 * In the AppDelegate there is a ```RoundViewExtension```, which adds to any object of this or a child class the ability to draw a frame as a circle with specified color and line thickness. The radius of the circle is half the smallest size of the view (width or height), and the center of the circle is the same as the center of the view itself. 
@@ -29,6 +30,8 @@
 <img src="https://media.github.bus.zalan.do/user/10996/files/dc344844-4146-4729-9709-50e06b1c9a41" height = 400, width = 230> <img src="https://media.github.bus.zalan.do/user/10996/files/fbf24567-219e-4f06-8062-d2bc0facae6a" height = 230, width = 400>
 
 ### Task 2
+
+[__Walkthrough on YouTube__](https://www.youtube.com/watch?v=tN0EFUjMUPM&t=33s)
 * Create a music playing screen
 
 * The ````UIImageView```` to display the photo must have an aspect ratio of 1:1 and ````contentMode```` = ````scaleAspectFill````.
